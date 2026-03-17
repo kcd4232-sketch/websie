@@ -1,0 +1,133 @@
+/* Pretendard 폰트: 한국어에 최적화된 고품질 무료 폰트 CDN 로드 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== CSS 변수: COSMICO KOREA 브랜드 컬러 기반 ===== */
+@layer base {
+  :root {
+    /* shadcn 기본 변수 (oklch 색상 형식) */
+    --background: oklch(0.97 0.008 65);       /* 크림 배경 */
+    --foreground: oklch(0.16 0.04 250);       /* 네이비 텍스트 */
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.16 0.04 250);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.16 0.04 250);
+    --primary: oklch(0.16 0.04 250);          /* 네이비 */
+    --primary-foreground: oklch(0.97 0.008 65);
+    --secondary: oklch(0.93 0.01 65);
+    --secondary-foreground: oklch(0.16 0.04 250);
+    --muted: oklch(0.93 0.01 65);
+    --muted-foreground: oklch(0.5 0.02 250);
+    --accent: oklch(0.45 0.18 15);            /* 포인트 레드 */
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.88 0.01 65);
+    --input: oklch(0.88 0.01 65);
+    --ring: oklch(0.45 0.18 15);              /* 레드 링 */
+    --radius: 0.75rem;
+    --chart-1: oklch(0.45 0.18 15);
+    --chart-2: oklch(0.35 0.08 250);
+    --chart-3: oklch(0.55 0.12 150);
+    --chart-4: oklch(0.7 0.15 65);
+    --chart-5: oklch(0.6 0.1 300);
+    --sidebar: oklch(0.97 0.008 65);
+    --sidebar-foreground: oklch(0.16 0.04 250);
+    --sidebar-primary: oklch(0.16 0.04 250);
+    --sidebar-primary-foreground: oklch(0.97 0.008 65);
+    --sidebar-accent: oklch(0.93 0.01 65);
+    --sidebar-accent-foreground: oklch(0.16 0.04 250);
+    --sidebar-border: oklch(0.88 0.01 65);
+    --sidebar-ring: oklch(0.45 0.18 15);
+  }
+
+  .dark {
+    --background: oklch(0.13 0.04 250);       /* 다크 네이비 배경 */
+    --foreground: oklch(0.97 0.008 65);       /* 크림 텍스트 */
+    --card: oklch(0.18 0.04 250);
+    --card-foreground: oklch(0.97 0.008 65);
+    --popover: oklch(0.18 0.04 250);
+    --popover-foreground: oklch(0.97 0.008 65);
+    --primary: oklch(0.97 0.008 65);
+    --primary-foreground: oklch(0.13 0.04 250);
+    --secondary: oklch(0.22 0.04 250);
+    --secondary-foreground: oklch(0.97 0.008 65);
+    --muted: oklch(0.22 0.04 250);
+    --muted-foreground: oklch(0.65 0.02 250);
+    --accent: oklch(0.45 0.18 15);
+    --accent-foreground: oklch(1 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 12%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.45 0.18 15);
+    --sidebar: oklch(0.18 0.04 250);
+    --sidebar-foreground: oklch(0.97 0.008 65);
+    --sidebar-primary: oklch(0.45 0.18 15);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.22 0.04 250);
+    --sidebar-accent-foreground: oklch(0.97 0.008 65);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.45 0.18 15);
+  }
+
+  .theme {
+    --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+    font-family: 'Pretendard Variable', 'Pretendard', -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* ===== 커스텀 유틸리티 클래스 ===== */
+@layer utilities {
+  /* 섹션 공통 위아래 여백 */
+  .section-padding {
+    @apply py-20 md:py-28 px-4;
+  }
+
+  /* 최대 너비 1152px 컨테이너 */
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* 포인트 레드 텍스트 그라데이션 */
+  .text-gradient {
+    background: linear-gradient(135deg, #C41E3A 0%, #e8526a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 스크롤바 숨기기 (캐러셀 등) */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* 텍스트 균형 정렬 */
+  .text-balance {
+    text-wrap: balance;
+  }
+}
