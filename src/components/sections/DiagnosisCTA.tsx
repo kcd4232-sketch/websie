@@ -53,7 +53,7 @@ export default function DiagnosisCTA() {
             {/* CTA 버튼 — 보조 (아웃라인) */}
             <Link
               href="/self-diagnosis"
-              className="inline-flex items-center gap-2 px-8 py-3 border border-white/25 text-white/70 font-medium rounded-full hover:border-white/50 hover:text-white transition-colors duration-200 text-base"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-[#DDDAD7] text-[#0A1628] font-semibold rounded-full hover:bg-[#ccc9c6] transition-colors duration-200 text-base"
             >
               자가진단 시작하기
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
